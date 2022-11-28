@@ -78,19 +78,19 @@ io.on('connection', socket => {
     io.to(socket.id).emit('S_GiveplayerNum', temp[temp.length-1])
 
 
-    // setInterval(()=>{
-    //     // console.log('send')
-    //     let all = get_AllWorlds()
-    //     let worlds = Object.keys(all)
-    //     for(let world of worlds){
-    //         io.emit("S_HeartBeat",all[world])
-    //         //room example
-    //          // io.to(params.worldname.trim().toLowerCase()).emit('S_WorldUpdate',newworldstate);
-    //     }
-    //     }, 100)
+
 })
 
-
+setInterval(()=>{
+    // console.log('send')
+    let all = get_AllWorlds()
+    let worlds = Object.keys(all)
+    for(let world of worlds){
+        io.emit("S_HeartBeat",all[world])
+        //room example
+         // io.to(params.worldname.trim().toLowerCase()).emit('S_WorldUpdate',newworldstate);
+    }
+    }, 50)
 
 
 
