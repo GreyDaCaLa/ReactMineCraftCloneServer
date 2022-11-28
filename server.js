@@ -6,6 +6,7 @@ import cors from 'cors';
 import router from './routes/routes.js';
 import { get_AllWorlds, get_WorldContent, update_WorldCubes, update_WorldPlayers } from './worlds.js';
     
+const PORT = process.env.PORT || 5000
 
 const app = express();
 const httpserver = http.createServer(app)
@@ -93,10 +94,6 @@ io.on('connection', socket => {
 
 
 
-httpserver.listen(5000, () => {
-    console.log(`Server running on port ${5000}`)
+httpserver.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
 });
-
-// httpserver.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`)
-// });
